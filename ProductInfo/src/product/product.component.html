@@ -1,0 +1,28 @@
+<form [formGroup]="simpleForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" type="text" pInputText formControlName="name" />
+      <div *ngIf="simpleForm.get('name')?.invalid && simpleForm.get('name')?.touched">
+        Name is required
+      </div>
+    </div>
+  
+    <div>
+      <label for="quantity">Quantity</label>
+      <input id="quantity" type="text" pInputText formControlName="quantity" />
+      <div *ngIf="simpleForm.get('quantity')?.invalid && simpleForm.get('quantity')?.touched">
+        Quantity is required
+      </div>
+    </div>
+  
+    <div>
+      <label for="price">Price</label>
+      <input id="price" type="text" pInputText formControlName="price" />
+      <div *ngIf="simpleForm.get('price')?.invalid && simpleForm.get('price')?.touched">
+        Price is required
+      </div>
+    </div>
+  
+    <button pButton type="submit" label="Submit"></button>
+  </form>
+  
